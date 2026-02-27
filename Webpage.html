@@ -129,6 +129,7 @@
             transform: var(--tip-transform, translateX(-50%)) translateY(0);
         }
 
+        /* 自定義動畫：導航箭頭 */
         @keyframes bounce-x {
             0%, 100% { transform: translateX(0); }
             50% { transform: translateX(5px); }
@@ -148,18 +149,15 @@
             <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-blue-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
             
             <div class="relative z-10 text-center">
-                <!-- 獎盃圖示 -->
                 <div class="w-20 h-20 bg-bcg-green rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-bcg-green/40 relative">
                     <i class="fas fa-trophy text-white text-3xl"></i>
                 </div>
                 
-                <!-- 標題 -->
                 <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 uppercase tracking-tight">
                     <span class="lang-en">Mission Accomplished!</span>
                     <span class="lang-zh hidden">任務順利達成！</span>
                 </h3>
                 
-                <!-- 操作按鈕 -->
                 <div class="flex flex-col space-y-3">
                     <a href="https://lolopodcast.github.io/1142-ITBM-EMI/" target="_blank" class="w-full py-3 bg-bcg-green text-white rounded-xl font-bold hover:bg-green-700 transition shadow-lg shadow-bcg-green/20 text-center flex items-center justify-center space-x-2">
                         <span class="lang-en">Mysterious Hall of Knowledge (Not a Scam) <i class="fas fa-external-link-alt ml-1 text-xs"></i></span>
@@ -180,6 +178,7 @@
             <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-1 sm:mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
+            <!-- LOGO: 跳回首頁頁首 -->
             <div onclick="switchSection(event, 'overview')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
                 <span class="font-bold text-lg sm:text-xl tracking-wider text-bcg-green leading-none uppercase group-hover:opacity-80 transition-opacity">ITBM</span>
             </div>
@@ -306,6 +305,7 @@
                             To effectively formulate and execute industrial policy, corporate strategy, and <span class="keyword" data-tip="The act of cooperation between competing companies.">co-opetition</span>, it is essential to develop a profound understanding of <span class="keyword" data-tip="Stages an industry passes through from inception to decline.">Industry Life Cycles</span>, Innovative Business Models, and Co-opetitive Dynamics. We view industry as a collective of both established firms and startups, analyzing upward, horizontal, and downward trends through the temporal dimensions of points, lines, and planes. Through the analysis of emerging technologies and practical industry cases, students will learn how leading firms build strategic positions, cultivate the competencies required of a <span class="keyword" data-tip="Product Manager: Responsible for the strategy, roadmap, and feature definition for that product.">Product Manager (PM)</span>.
                         </p>
 
+                        <!-- 中文內容 -->
                         <p class="lang-zh hidden">
                             本課程的目標是賦予學生自信地分析任何新興產業的能力——包括執行專業英語溝通、有效利用 AI，並應用結構化思維。
                             課程採用<span class="keyword" data-tip="學生課前預習教材，課堂時間用於實務練習與深入討論。">「翻轉課堂」</span>模式，強調正確使用<span class="keyword" data-tip="能生成文字、圖像或代碼的新興人工智慧技術。">生成式 AI</span> 工具（如 ChatGPT、NotebookLM）輔助學習，同時避免過度依賴。教學設計核心為<span class="keyword" data-tip="問題導向學習：透過解決現實世界問題來獲獲取知識。">「問題導向學習 (PBL)」</span>、<span class="keyword" data-tip="自主學習：學習者主動採取行動並引導學習。">「自主學習 (SDL)」</span>與團隊協作學習。
@@ -498,7 +498,7 @@
                             <div class="ml-4 flex-1">
                                 <div class="flex justify-between items-start">
                                     <p class="text-sm font-bold text-gray-900 dark:text-gray-100 group-hover:text-bcg-green transition task-title">
-                                        <span class="lang-en">2. 1-Minute YT Self-Introduction Video</span><span class="lang-zh hidden">2. 1 分鐘 YT 自我介紹影片（全英）</span>
+                                        <span class="lang-en">2. 1-Minute YT Self-Introduction Video</span><span class="lang-zh hidden">2. 1 分鐘 YT 自我介紹影片</span>
                                     </p>
                                     <span class="text-[9px] px-1.5 py-0.5 rounded bg-red-500/10 text-red-500 font-bold uppercase tracking-tighter border border-red-500/20">Required</span>
                                 </div>
@@ -508,8 +508,14 @@
                                         <span class="lang-en">Avoid 'Made for Kids' and YouTube Shorts.</span>
                                         <span class="lang-zh hidden">注意：影片不要設為兒童模式或上傳為 YouTube 短影音 (Shorts)。</span>
                                     </p>
-                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">Deadline: 2/28 23:59</p>
-                                    <p class="text-gray-400 italic">Please visit Moodle for more specific details.</p>
+                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
+                                        <span class="lang-en">Deadline: 2/28 23:59</span>
+                                        <span class="lang-zh hidden">截止日期：2/28 23:59</span>
+                                    </p>
+                                    <p class="text-gray-400 italic">
+                                        <span class="lang-en">Please visit Moodle for more specific details.</span>
+                                        <span class="lang-zh hidden">請至 Moodle 查看更詳細的內容。</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -529,7 +535,10 @@
                                 </div>
                                 <div class="mt-2 text-[11px] text-gray-500 space-y-1.5">
                                     <p><span class="lang-en">Upload PDF to Moodle W2.</span><span class="lang-zh hidden">上傳 PDF 檔至 Moodle W2。</span></p>
-                                    <p class="font-bold text-red-700 dark:text-red-400 uppercase tracking-wide">Deadline: 3/3 23:59</p>
+                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
+                                        <span class="lang-en">Deadline: 3/3 23:59</span>
+                                        <span class="lang-zh hidden">截止日期：3/3 23:59</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -549,7 +558,10 @@
                                 </div>
                                 <div class="mt-2 text-[11px] text-gray-500 space-y-1.5">
                                     <p><span class="lang-en">Generate and upload PDF to Moodle W2.</span><span class="lang-zh hidden">由網站生成並轉檔後，上傳 PDF 至 Moodle W2。</span></p>
-                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">Deadline: 3/3 23:59</p>
+                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
+                                        <span class="lang-en">Deadline: 3/3 23:59</span>
+                                        <span class="lang-zh hidden">截止日期：3/3 23:59</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -568,10 +580,14 @@
                                     <span class="text-[9px] px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-500 font-bold uppercase tracking-tighter border border-purple-500/20">Class 3/5</span>
                                 </div>
                                 <div class="mt-2 text-[11px] text-gray-500 space-y-1.5">
-                                    <p><span class="lang-en">Topic: Group Desert Survival Coggle. Duration: ~15 mins.</span><span class="lang-zh hidden">主題：Group-desert survival coggle。時間：約15分鐘。</span></p>
+                                    <p><span class="lang-en">Topic: Group Desert Survival Coggle. Duration: ~15 mins.</span><span class="lang-zh hidden">主題：團體沙漠求生 Coggle。時間：約15分鐘。</span></p>
                                     <p class="text-red-600 dark:text-red-400 font-bold italic underline">
                                         <span class="lang-en">Note: Every team member must present.</span>
                                         <span class="lang-zh hidden">注意：每位團員都必須參與報告。</span>
+                                    </p>
+                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
+                                        <span class="lang-en">Deadline: 3/4 23:59</span>
+                                        <span class="lang-zh hidden">截止日期：3/4 23:59</span>
                                     </p>
                                 </div>
                             </div>
