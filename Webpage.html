@@ -170,7 +170,7 @@
             <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-1 sm:mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
-            <div onclick="switchSection(event, 'w3-pestel-tu')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
+            <div onclick="switchSection(event, 'w4-semiconductor')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
                 <span class="font-bold text-lg sm:text-xl tracking-wider text-bcg-green leading-none uppercase group-hover:opacity-80 transition-opacity">ITBM</span>
             </div>
             <div class="hidden lg:flex flex-col justify-center h-full py-1">
@@ -212,10 +212,10 @@
         </div>
 
         <nav class="flex-1 overflow-y-auto no-scrollbar py-4 space-y-1">
-            <a href="#" onclick="switchSection(event, 'w3-pestel-tu')" id="nav-w3-pestel-tu" class="block px-6 py-4 border-l-4 border-bcg-green bg-gray-100 dark:bg-white/5 text-bcg-green dark:text-white whitespace-nowrap">
+            <a href="#" onclick="switchSection(event, 'w4-semiconductor')" id="nav-w4-semiconductor" class="block px-6 py-4 border-l-4 border-bcg-green bg-gray-100 dark:bg-white/5 text-bcg-green dark:text-white whitespace-nowrap">
                 <div class="flex items-center">
-                    <span class="w-6 text-center mr-3"><i class="fas fa-brain"></i></span>
-                    <span class="lang-en">W3 PESTEL & TU</span><span class="lang-zh hidden">第三週 PESTEL 與思維升級</span>
+                    <span class="w-6 text-center mr-3"><i class="fas fa-microchip"></i></span>
+                    <span class="lang-en">W4 Semiconductor</span><span class="lang-zh hidden">第四週 半導體產業</span>
                 </div>
             </a>
         </nav>
@@ -224,101 +224,102 @@
     <!-- 主要內容區 -->
     <main class="flex-1 pt-20 pb-20 px-4 max-w-6xl mx-auto w-full">
         
-        <!-- SECTION: W3 PESTEL & TU (預設區塊) -->
-        <div id="section-w3-pestel-tu" class="animate-fade-in">
+        <!-- SECTION: W4 SEMICONDUCTOR (預設顯示) -->
+        <div id="section-w4-semiconductor" class="animate-fade-in">
             <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
                 <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
-                    <span class="lang-en">W3 PESTEL & TU</span><span class="lang-zh hidden">第三週 PESTEL 與思維升級</span>
+                    <span class="lang-en">W4 Semiconductor: Geopolitics & Supply Chain</span>
+                    <span class="lang-zh hidden">W4 半導體：地緣政治與供應鏈</span>
                 </h2>
             </div>
 
-            <!-- W3 提醒模組 -->
+            <!-- W4 提醒模組 -->
             <div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/50 rounded-xl p-6 shadow-sm mb-8 relative audio-target">
                 <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-blue-600"><i class="fas fa-bell text-8xl"></i></div>
                 <div class="relative z-10">
-                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center"><i class="fas fa-bullhorn mr-2"></i><span class="lang-en">W3 Reminders</span><span class="lang-zh hidden">第三週 重要提醒</span></h3>
+                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i>
+                        <span class="lang-en">W4 Important Reminders</span>
+                        <span class="lang-zh hidden">第四週 重要提醒</span>
+                    </h3>
                     <ul class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                         <li class="flex items-start">
                             <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">01</span>
-                            <p><span class="lang-en">Bring laptop/tablet for hands-on operation.</span><span class="lang-zh hidden">請每週攜帶筆電或平板進行課堂實體操作。</span></p>
+                            <p><span class="lang-en">Bring your devices for in-class semiconductor supply chain simulations.</span><span class="lang-zh hidden">請務必攜帶筆電/平板，課堂將進行半導體供應鏈模擬。</span></p>
                         </li>
                         <li class="flex items-start">
                             <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">02</span>
-                            <p><span class="lang-en">Bring name card for identification and roll call.</span><span class="lang-zh hidden">每週請攜帶名牌讓教授跟 TA 認識你並進行點名。</span></p>
+                            <p><span class="lang-en">Ensure your name card is visible for team discussions and roll call.</span><span class="lang-zh hidden">請確保名牌放置於顯眼處，以便進行分組討論與點名。</span></p>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- W3 任務清單 (已刪除原任務 1) -->
+            <!-- W4 任務清單 -->
             <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden audio-target">
-                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-brain text-8xl"></i></div>
+                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
                 <div class="flex justify-between items-end mb-4">
-                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W3 Mission Checklist</span><span class="lang-zh hidden">第三週 任務達成狀態清單</span></h3></div>
-                    <span id="progress-percent-w3" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W4 Mission Checklist</span><span class="lang-zh hidden">第四週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w4" class="text-lg font-bold font-mono text-bcg-green">0%</span>
                 </div>
                 <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
 
-                <div class="space-y-4" id="checklist-w3">
-                    <!-- 任務 1 (原任務 2) -->
+                <div class="space-y-4" id="checklist-w4">
+                    <!-- 任務 1 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
                             <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
                             <div class="ml-4 flex-1">
                                 <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
-                                    <span class="lang-en">1. Submit Desert Survival Expert Evaluation (PDF)</span><span class="lang-zh hidden">1. 繳交沙漠求生專家評估檔案至 Moodle W2</span>
+                                    <span class="lang-en">1. Menti Feedback & W3 Forum Reply</span><span class="lang-zh hidden">1. 回覆其他組別 Menti 與上傳截圖</span>
                                 </p>
                                 <div class="mt-2 text-[11px] text-gray-500 space-y-1">
-                                    <p><span class="lang-en">Upload PDF to 【Submission-Desert Survival Evaluation】.</span><span class="lang-zh hidden">轉檔成 PDF 上傳至 【Submission-Desert Survival Evaluation】。</span></p>
+                                    <p><span class="lang-en">Upload Menti question screenshots and provide feedback to groups on Moodle W3.</span><span class="lang-zh hidden">回覆其他組別 Menti、上傳截圖並在 Moodle W3 回覆各組回饋。</span></p>
                                     <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
-                                        <span class="lang-en">Deadline: 3/10 20:00</span><span class="lang-zh hidden">截止日期：3/10 20:00</span>
+                                        <span class="lang-en">Deadline: 3/11 23:59</span><span class="lang-zh hidden">截止日期：3/11 23:59</span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </label>
 
-                    <!-- 任務 2 (原任務 3) -->
+                    <!-- 任務 2 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
                             <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
                             <div class="ml-4 flex-1">
                                 <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
-                                    <span class="lang-en">2. AI Conversation & D-ID Modified Video</span><span class="lang-zh hidden">2. 繳交 AI 對話與 D-ID 修改版本連結</span>
+                                    <span class="lang-en">2. Individual Assignment: Website CSV Submission</span><span class="lang-zh hidden">2. 個人作業：分別繳交網頁 CSV</span>
                                 </p>
-                                <div class="mt-2 text-[11px] text-gray-500 space-y-1.5">
-                                    <p><span class="lang-en">Record using YOUR OWN VOICE. Script from AI summary.</span><span class="lang-zh hidden">使用 AI 總結自我介紹並製作影片。請務必用「自己的聲音」錄製。</span></p>
+                                <div class="mt-2 text-[11px] text-gray-500 space-y-1">
+                                    <p><span class="lang-en">Submit website CSVs to each respective discussion forum on Moodle W4.</span><span class="lang-zh hidden">個人作業：分別繳交網頁 Csv 至 Moodle W4 各別討論區。</span></p>
+                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
+                                        <span class="lang-en">Deadline: 3/18 23:59</span><span class="lang-zh hidden">截止日期：3/18 23:59</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 3 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">3. Group Assignment: Combined Coggle & Presentation Preparation</span><span class="lang-zh hidden">3. 團體作業：網頁 Coggle 製作與報告準備</span>
+                                </p>
+                                <div class="mt-2 text-[11px] text-gray-500 space-y-1">
+                                    <p><span class="lang-en">Combine two websites into one Coggle and submit to Moodle W4.</span><span class="lang-zh hidden">團體作業：兩個網頁做成一個 Coggle 並繳交至 Moodle W4。</span></p>
                                     <p class="text-red-600 dark:text-red-400 font-bold italic underline">
-                                        <span class="lang-en">Note: Duration 1:00 ± 5s. No Shorts or Kids mode.</span>
-                                        <span class="lang-zh hidden">注意：影片時長須為 1 分 ± 5 秒，勿用短影音或兒童模式。</span>
+                                        <span class="lang-en">Prepare a 15-minute oral group report.</span>
+                                        <span class="lang-zh hidden">請同時準備 15 分鐘口頭小組報告。</span>
                                     </p>
                                     <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
-                                        <span class="lang-en">Deadline: 3/7 20:00</span><span class="lang-zh hidden">截止日期：3/7 20:00</span>
-                                    </p>
-                                    <p class="text-gray-400 italic">
-                                        <span class="lang-en">Please visit Moodle for more specific details.</span>
-                                        <span class="lang-zh hidden">請至 Moodle 查看更詳細的內容。</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </label>
-
-                    <!-- 任務 3 (原任務 4) -->
-                    <label class="relative block cursor-pointer group">
-                        <input type="checkbox" class="tech-check hidden peer">
-                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
-                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
-                            <div class="ml-4 flex-1">
-                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
-                                    <span class="lang-en">3. W3 Preview & Group Coggle Submission</span><span class="lang-zh hidden">3. 預習 W3 內容與製作小組 Coggle</span>
-                                </p>
-                                <div class="mt-2 text-[11px] text-gray-500 space-y-1">
-                                    <p><span class="lang-en">Preview TU page & Competence Building. Prepare a 15-minute oral group report.</span><span class="lang-zh hidden">預習 TU 網頁及能力構建內容。上傳小組 Coggle 並準備 15 分鐘口頭小組報告。</span></p>
-                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
-                                        <span class="lang-en">Deadline: 3/10 23:59</span><span class="lang-zh hidden">截止日期：3/10 23:59</span>
+                                        <span class="lang-en">Deadline: 3/18 23:59</span><span class="lang-zh hidden">截止日期：3/18 23:59</span>
                                     </p>
                                 </div>
                             </div>
@@ -328,8 +329,8 @@
 
                 <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest">
                     <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
-                    <span class="lang-en">Focus on PESTEL and TU this week.</span>
-                    <span class="lang-zh hidden">本週重點：PESTEL 分析與思維升級。</span>
+                    <span class="lang-en">Semiconductor supply chain analysis is the core of this week.</span>
+                    <span class="lang-zh hidden">半導體供應鏈分析為本週核心學習內容。</span>
                 </div>
             </div>
         </div>
@@ -386,7 +387,8 @@
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
             
-            const sections = ['w3-pestel-tu'];
+            // 目前僅剩 W4
+            const sections = ['w4-semiconductor'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
@@ -451,7 +453,7 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w3-pestel-tu');
+            if (logo) logo.onclick = (e) => switchSection(e, 'w4-semiconductor');
             
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
