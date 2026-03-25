@@ -133,6 +133,32 @@
 </head>
 <body class="flex flex-col min-h-screen bg-white dark:bg-bcg-dark text-gray-900 dark:text-bcg-textDark font-sans transition-colors duration-300 overflow-x-hidden">
 
+    <!-- 瀏覽次數驗證彈窗 -->
+    <div id="analytics-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden px-4">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
+        <div class="relative bg-white dark:bg-bcg-dark border border-gray-200 dark:border-gray-800 rounded-2xl p-6 max-w-sm w-full shadow-2xl">
+            <h3 class="text-lg font-bold mb-4 flex items-center text-gray-800 dark:text-gray-100">
+                <i class="fas fa-chart-line mr-2 text-bcg-green"></i>
+                <span class="lang-en">View Analytics</span><span class="lang-zh hidden">查看流量統計</span>
+            </h3>
+            
+            <div id="pwd-entry">
+                <p class="text-xs text-gray-500 mb-4"><span class="lang-en">Enter password to reveal total visits.</span><span class="lang-zh hidden">請輸入密碼以查看總瀏覽次數。</span></p>
+                <input type="password" id="analytics-pwd" class="w-full bg-gray-100 dark:bg-black/40 border border-gray-300 dark:border-gray-700 rounded-lg px-4 py-2 text-sm mb-4 outline-none focus:border-bcg-green transition" placeholder="••••">
+                <div class="flex space-x-2">
+                    <button onclick="checkAnalyticsPwd()" class="flex-1 bg-bcg-green text-white py-2 rounded-lg text-sm font-bold hover:bg-green-700 transition">Verify</button>
+                    <button onclick="closeAnalyticsModal()" class="flex-1 bg-gray-200 dark:bg-white/10 text-gray-600 dark:text-gray-300 py-2 rounded-lg text-sm transition">Cancel</button>
+                </div>
+            </div>
+
+            <div id="stats-display" class="hidden text-center py-4">
+                <p class="text-sm text-gray-500 mb-1">Total Page Visits / 總累積瀏覽量</p>
+                <p id="visit-count-val" class="text-4xl font-bold text-bcg-green font-mono tracking-tighter">---</p>
+                <button onclick="closeAnalyticsModal()" class="mt-6 w-full bg-gray-200 dark:bg-white/10 py-2 rounded-lg text-sm transition">Done</button>
+            </div>
+        </div>
+    </div>
+
     <!-- 任務完成彈窗 -->
     <div id="complete-modal" class="fixed inset-0 z-[100] flex items-center justify-center hidden px-4">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
@@ -170,7 +196,7 @@
             <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-1 sm:mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
-            <div onclick="switchSection(event, 'w4-semiconductor')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
+            <div onclick="switchSection(event, 'w6-smarthome')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
                 <span class="font-bold text-lg sm:text-xl tracking-wider text-bcg-green leading-none uppercase group-hover:opacity-80 transition-opacity">ITBM</span>
             </div>
             <div class="hidden lg:flex flex-col justify-center h-full py-1">
@@ -212,10 +238,10 @@
         </div>
 
         <nav class="flex-1 overflow-y-auto no-scrollbar py-4 space-y-1">
-            <a href="#" onclick="switchSection(event, 'w4-semiconductor')" id="nav-w4-semiconductor" class="block px-6 py-4 border-l-4 border-bcg-green bg-gray-100 dark:bg-white/5 text-bcg-green dark:text-white whitespace-nowrap">
+            <a href="#" onclick="switchSection(event, 'w6-smarthome')" id="nav-w6-smarthome" class="block px-6 py-4 border-l-4 border-bcg-green bg-gray-100 dark:bg-white/5 text-bcg-green dark:text-white whitespace-nowrap">
                 <div class="flex items-center">
-                    <span class="w-6 text-center mr-3"><i class="fas fa-microchip"></i></span>
-                    <span class="lang-en">W4 Semiconductor</span><span class="lang-zh hidden">第四週 半導體產業</span>
+                    <span class="w-6 text-center mr-3"><i class="fas fa-brain"></i></span>
+                    <span class="lang-en">W6 Smart Home & LN-2</span><span class="lang-zh hidden">第六週 智慧家庭與商業模式</span>
                 </div>
             </a>
         </nav>
@@ -224,81 +250,100 @@
     <!-- 主要內容區 -->
     <main class="flex-1 pt-20 pb-20 px-4 max-w-6xl mx-auto w-full">
         
-        <!-- SECTION: W4 SEMICONDUCTOR (預設顯示) -->
-        <div id="section-w4-semiconductor" class="animate-fade-in">
+        <!-- SECTION: W6 SMART HOME & BUSINESS MODELS -->
+        <div id="section-w6-smarthome" class="animate-fade-in">
             <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
                 <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
-                    <span class="lang-en">W4 Semiconductor: Geopolitics & Supply Chain</span>
-                    <span class="lang-zh hidden">W4 半導體：地緣政治與供應鏈</span>
+                    <span class="lang-en">W6 Smart Home & Business Models</span>
+                    <span class="lang-zh hidden">W6 智慧家庭與商業模式</span>
                 </h2>
             </div>
 
-            <!-- W4 提醒模組 -->
+            <!-- W6 提醒模組 -->
             <div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/50 rounded-xl p-6 shadow-sm mb-8 relative audio-target">
                 <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-blue-600"><i class="fas fa-bell text-8xl"></i></div>
                 <div class="relative z-10">
                     <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center">
                         <i class="fas fa-bullhorn mr-2"></i>
-                        <span class="lang-en">W4 Important Reminders</span>
-                        <span class="lang-zh hidden">第四週 重要提醒</span>
+                        <span class="lang-en">W6 Important Reminders</span>
+                        <span class="lang-zh hidden">第六週 重要提醒</span>
                     </h3>
                     <ul class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
                         <li class="flex items-start">
                             <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">01</span>
-                            <p><span class="lang-en">Bring your devices for in-class semiconductor supply chain simulations.</span><span class="lang-zh hidden">請務必攜帶筆電/平板，課堂將進行半導體供應鏈模擬。</span></p>
+                            <p><span class="lang-en">Please bring your laptops for practical operations.</span><span class="lang-zh hidden">請攜帶筆電進行實體操作。</span></p>
                         </li>
                         <li class="flex items-start">
                             <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">02</span>
-                            <p><span class="lang-en">Ensure your name card is visible for team discussions and roll call.</span><span class="lang-zh hidden">請確保名牌放置於顯眼處，以便進行分組討論與點名。</span></p>
+                            <p><span class="lang-en">Visible name cards are mandatory for identification.</span><span class="lang-zh hidden">課堂參與及點名請務必放置名牌。</span></p>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <!-- W4 任務清單 -->
-            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden audio-target">
+            <!-- W6 任務清單 -->
+            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
                 <div class="flex justify-between items-end mb-4">
-                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W4 Mission Checklist</span><span class="lang-zh hidden">第四週 任務達成狀態清單</span></h3></div>
-                    <span id="progress-percent-w4" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W6 Mission Checklist</span><span class="lang-zh hidden">第六週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w6" class="text-lg font-bold font-mono text-bcg-green">0%</span>
                 </div>
                 <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
 
-                <div class="space-y-4" id="checklist-w4">
-                    <!-- 任務 1 -->
-                    <label class="relative block cursor-pointer group">
-                        <input type="checkbox" class="tech-check hidden peer">
-                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
-                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
-                            <div class="ml-4 flex-1">
-                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
-                                    <span class="lang-en">1. Menti Feedback & W3 Forum Reply</span><span class="lang-zh hidden">1. 回覆其他組別 Menti 與上傳截圖</span>
-                                </p>
-                                <div class="mt-2 text-[11px] text-gray-500 space-y-1">
-                                    <p><span class="lang-en">Upload Menti question screenshots and provide feedback to groups on Moodle W3.</span><span class="lang-zh hidden">回覆其他組別 Menti、上傳截圖並在 Moodle W3 回覆各組回饋。</span></p>
-                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
-                                        <span class="lang-en">Deadline: 3/11 23:59</span><span class="lang-zh hidden">截止日期：3/11 23:59</span>
-                                    </p>
+                <div class="space-y-4" id="checklist-w6">
+                    <!-- 任務 1: Menti & Moodle Feedback -->
+                    <div class="p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg">
+                        <p class="text-sm font-bold text-gray-900 dark:text-gray-100 mb-4 audio-target">
+                            <span class="lang-en">1. Menti & Moodle Feedback</span><span class="lang-zh hidden">1. Menti 與 Moodle 反饋互動</span>
+                        </p>
+                        <div class="space-y-4">
+                            <!-- 1.1 非報告組別 -->
+                            <label class="relative block cursor-pointer group">
+                                <input type="checkbox" class="tech-check hidden peer">
+                                <div class="flex items-center p-3 bg-white/50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                                    <div class="w-6 h-6 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-[10px]"></i></div>
+                                    <div class="ml-3 flex-1 audio-target">
+                                        <p class="text-xs font-bold text-gray-900 dark:text-gray-100 task-title">
+                                            <span class="lang-en">For Non-presenting Groups (Audience): Please submit at least one feedback or question for the presenting groups via Menti.</span>
+                                            <span class="lang-zh hidden">非報告組（聽眾）：請透過 Menti 提交至少一個反饋或問題。</span>
+                                        </p>
+                                        <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                            <span class="lang-en">Deadline: Today (March 25), 23:59</span><span class="lang-zh hidden">截止日期：今日 (3/25) 23:59</span>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
+                            </label>
+                            <!-- 1.2 報告組別 (Updated content and deadline) -->
+                            <label class="relative block cursor-pointer group">
+                                <input type="checkbox" class="tech-check hidden peer">
+                                <div class="flex items-center p-3 bg-white/50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                                    <div class="w-6 h-6 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-[10px]"></i></div>
+                                    <div class="ml-3 flex-1 audio-target">
+                                        <p class="text-xs font-bold text-gray-900 dark:text-gray-100 task-title">
+                                            <span class="lang-en">For Presenting Groups: Reply to at least two questions on Moodle W5 video thread (from different groups).</span>
+                                            <span class="lang-zh hidden">報告組別：在 Moodle W5 回覆至少兩個問題（來自不同小組）。</span>
+                                        </p>
+                                        <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                            <span class="lang-en">Deadline: Today (March 25), 23:59</span><span class="lang-zh hidden">截止日期：今日 (3/25) 23:59</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </label>
                         </div>
-                    </label>
+                    </div>
 
                     <!-- 任務 2 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
                             <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
-                            <div class="ml-4 flex-1">
+                            <div class="ml-4 flex-1 audio-target">
                                 <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
-                                    <span class="lang-en">2. Individual Assignment: Website CSV Submission</span><span class="lang-zh hidden">2. 個人作業：分別繳交網頁 CSV</span>
+                                    <span class="lang-en">2. Group Coggle: Smart Home</span><span class="lang-zh hidden">2. 小組作業：上傳智慧家庭 Coggle</span>
                                 </p>
-                                <div class="mt-2 text-[11px] text-gray-500 space-y-1">
-                                    <p><span class="lang-en">Submit website CSVs to each respective discussion forum on Moodle W4.</span><span class="lang-zh hidden">個人作業：分別繳交網頁 Csv 至 Moodle W4 各別討論區。</span></p>
-                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
-                                        <span class="lang-en">Deadline: 3/18 23:59</span><span class="lang-zh hidden">截止日期：3/18 23:59</span>
-                                    </p>
-                                </div>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: March 31 (Tuesday), 23:59</span><span class="lang-zh hidden">截止日期：3/31 (二) 23:59</span>
+                                </p>
                             </div>
                         </div>
                     </label>
@@ -308,35 +353,23 @@
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
                             <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
-                            <div class="ml-4 flex-1">
+                            <div class="ml-4 flex-1 audio-target">
                                 <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
-                                    <span class="lang-en">3. Group Assignment: Combined Coggle & Presentation Preparation</span><span class="lang-zh hidden">3. 團體作業：網頁 Coggle 製作與報告準備</span>
+                                    <span class="lang-en">3. Preview SPA of LN-2 Business Models</span><span class="lang-zh hidden">3. 預習 SPA of LN-2 商業模式</span>
                                 </p>
-                                <div class="mt-2 text-[11px] text-gray-500 space-y-1">
-                                    <p><span class="lang-en">Combine two websites into one Coggle and submit to Moodle W4.</span><span class="lang-zh hidden">團體作業：兩個網頁做成一個 Coggle 並繳交至 Moodle W4。</span></p>
-                                    <p class="text-red-600 dark:text-red-400 font-bold italic underline">
-                                        <span class="lang-en">Prepare a 15-minute oral group report.</span>
-                                        <span class="lang-zh hidden">請同時準備 15 分鐘口頭小組報告。</span>
-                                    </p>
-                                    <p class="font-bold text-red-700 dark:text-red-500 uppercase tracking-wide">
-                                        <span class="lang-en">Deadline: 3/18 23:59</span><span class="lang-zh hidden">截止日期：3/18 23:59</span>
-                                    </p>
-                                </div>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">This is a preview item and can serve as a BA (Bonus Assignment) for extra credit.</span>
+                                    <span class="lang-zh hidden">本項為預習內容，可作為 BA (Bonus Assignment) 加分項目。</span>
+                                </p>
                             </div>
                         </div>
                     </label>
-                </div>
-
-                <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest">
-                    <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
-                    <span class="lang-en">Semiconductor supply chain analysis is the core of this week.</span>
-                    <span class="lang-zh hidden">半導體供應鏈分析為本週核心學習內容。</span>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- 頁尾聯繫資訊 -->
+    <!-- 頁尾 -->
     <footer class="fixed bottom-0 w-full min-h-[3.5rem] h-auto bg-white dark:bg-black/95 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between px-3 md:px-6 z-50 text-xs py-2">
         <div class="flex flex-col">
             <span class="text-[9px] text-gray-500 font-mono leading-tight">1142 ITBM-EMI Hub &copy; NCNU IBS</span>
@@ -346,20 +379,110 @@
         </div>
         <div class="flex flex-col items-end text-[8px] sm:text-[9px] text-gray-500 leading-tight">
             <div class="flex flex-col items-end">
-                <span>TAs Email:</span>
+                <div class="flex items-center space-x-2">
+                    <!-- 瀏覽次數圖示 -->
+                    <button onclick="openAnalyticsModal()" class="text-gray-400 hover:text-bcg-green transition" title="Visit Analytics">
+                        <i class="fas fa-chart-line"></i>
+                    </button>
+                    <span>TAs Email:</span>
+                </div>
                 <a href="mailto:s113212016@mail1.ncnu.edu.tw" class="hover:text-bcg-green transition-colors">Tina: s113212016@mail1.ncnu.edu.tw</a>
                 <a href="mailto:s113251013@mail1.ncnu.edu.tw" class="hover:text-bcg-green transition-colors">Zoe: s113251013@mail1.ncnu.edu.tw</a>
             </div>
         </div>
     </footer>
 
+    <script type="module">
+        // Firebase Integration for View Counter
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInWithCustomToken, signInAnonymously, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        const firebaseConfig = JSON.parse(__firebase_config);
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'itbm-emi-hub';
+
+        // Auto-increment visits on load
+        async function initVisitCounter() {
+            try {
+                // RULE 3: Auth Before Queries
+                const initAuth = async () => {
+                    if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                        await signInWithCustomToken(auth, __initial_auth_token);
+                    } else {
+                        await signInAnonymously(auth);
+                    }
+                };
+                await initAuth();
+
+                if (!auth.currentUser) return;
+
+                // RULE 1: Strict Paths
+                const statsRef = doc(db, 'artifacts', appId, 'public', 'data', 'analytics', 'page_stats');
+                const snap = await getDoc(statsRef);
+                
+                if (snap.exists()) {
+                    await updateDoc(statsRef, { views: increment(1) });
+                } else {
+                    await setDoc(statsRef, { views: 1 }, { merge: true });
+                }
+            } catch (e) {
+                console.error("Counter Error", e);
+            }
+        }
+
+        window.openAnalyticsModal = function() {
+            document.getElementById('analytics-modal').classList.remove('hidden');
+            document.getElementById('pwd-entry').classList.remove('hidden');
+            document.getElementById('stats-display').classList.add('hidden');
+            document.getElementById('analytics-pwd').value = '';
+        };
+
+        window.closeAnalyticsModal = function() {
+            document.getElementById('analytics-modal').classList.add('hidden');
+        };
+
+        window.checkAnalyticsPwd = async function() {
+            const pwd = document.getElementById('analytics-pwd').value;
+            if (pwd === '1142') {
+                document.getElementById('pwd-entry').classList.add('hidden');
+                document.getElementById('stats-display').classList.remove('hidden');
+                
+                try {
+                    const statsRef = doc(db, 'artifacts', appId, 'public', 'data', 'analytics', 'page_stats');
+                    const snap = await getDoc(statsRef);
+                    const count = snap.exists() ? snap.data().views : 0;
+                    document.getElementById('visit-count-val').textContent = count;
+                } catch (e) {
+                    document.getElementById('visit-count-val').textContent = "Error";
+                }
+            } else {
+                const input = document.getElementById('analytics-pwd');
+                input.classList.add('border-red-500');
+                setTimeout(() => input.classList.remove('border-red-500'), 1000);
+            }
+        };
+
+        // Run after DOM ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initVisitCounter);
+        } else {
+            initVisitCounter();
+        }
+    </script>
+
     <script>
+        // UI Logic
         let currentLang = 'en';
         let isDarkMode = true;
+        let isAudioPlaying = false;
         
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('overlay');
         const langToggle = document.getElementById('lang-toggle');
+        const audioBtn = document.getElementById('audio-btn');
 
         if (localStorage.theme === 'light') {
             isDarkMode = false;
@@ -382,32 +505,28 @@
                 if(currentLang === 'zh') el.classList.remove('hidden');
                 else el.classList.add('hidden');
             });
+            if(isAudioPlaying) stopAudio();
         });
 
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
-            
-            // 目前僅剩 W4
-            const sections = ['w4-semiconductor'];
+            const sections = ['w6-smarthome'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
             });
-            
             const target = document.getElementById('section-' + sectionId);
             if(target) target.classList.remove('hidden');
-            
             document.querySelectorAll('#sidebar a').forEach(el => {
                 el.classList.remove('border-bcg-green', 'bg-gray-100', 'dark:bg-white/5', 'text-bcg-green', 'dark:text-white');
                 el.classList.add('border-transparent', 'text-gray-700', 'dark:text-gray-400');
             });
-            
             const activeNav = document.getElementById('nav-' + sectionId);
             if(activeNav) {
                 activeNav.classList.remove('border-transparent', 'text-gray-700', 'dark:text-gray-400');
                 activeNav.classList.add('border-bcg-green', 'bg-gray-100', 'dark:bg-white/5', 'text-bcg-green', 'dark:text-white');
             }
-
+            if(isAudioPlaying) stopAudio();
             if (!sidebar.classList.contains('-translate-x-full')) toggleSidebar();
             window.scrollTo(0,0);
             updateProgress();
@@ -422,27 +541,62 @@
         function updateProgress() {
             const activeSection = Array.from(document.querySelectorAll('main > div')).find(d => !d.classList.contains('hidden'));
             if (!activeSection) return;
-
             const techChecks = activeSection.querySelectorAll('.tech-check');
             if (techChecks.length === 0) return;
-
             const total = techChecks.length;
             const checked = Array.from(techChecks).filter(c => c.checked).length;
             const percentage = Math.round((checked / total) * 100);
-            
             const progressPercent = activeSection.querySelector('[id^="progress-percent-"]');
             const progressBar = activeSection.querySelector('.mission-progress-bar');
-            
             if (progressPercent) progressPercent.textContent = percentage + '%';
             if (progressBar) progressBar.style.width = percentage + '%';
-
             if (percentage === 100) {
-                const modal = document.getElementById('complete-modal');
-                modal.classList.remove('hidden');
+                document.getElementById('complete-modal').classList.remove('hidden');
             }
         }
 
         function closeModal() { document.getElementById('complete-modal').classList.add('hidden'); }
+
+        audioBtn.addEventListener('click', () => {
+            if(isAudioPlaying) stopAudio();
+            else playAudio();
+        });
+
+        function playAudio() {
+            if (!('speechSynthesis' in window)) return;
+            window.speechSynthesis.cancel();
+            const activeSection = Array.from(document.querySelectorAll('main > div')).find(d => !d.classList.contains('hidden'));
+            if (!activeSection) return;
+            let textParts = [];
+            const targets = Array.from(activeSection.querySelectorAll('.audio-target'));
+            targets.forEach(el => {
+                const style = window.getComputedStyle(el);
+                if (style.display === 'none' || style.visibility === 'hidden') return;
+                const clone = el.cloneNode(true);
+                clone.querySelectorAll('.hidden').forEach(h => h.remove());
+                const text = clone.innerText.trim();
+                if (text && !textParts.includes(text)) textParts.push(text);
+            });
+            const finalMessage = textParts.join('. ').replace(/\s+/g, ' ');
+            if (!finalMessage) return;
+            const utterance = new SpeechSynthesisUtterance(finalMessage);
+            utterance.lang = currentLang === 'en' ? 'en-US' : 'zh-TW';
+            utterance.onstart = () => {
+                isAudioPlaying = true;
+                audioBtn.classList.add('text-bcg-green', 'animate-pulse');
+            };
+            utterance.onend = () => {
+                isAudioPlaying = false;
+                audioBtn.classList.remove('text-bcg-green', 'animate-pulse');
+            };
+            window.speechSynthesis.speak(utterance);
+        }
+
+        function stopAudio() {
+            window.speechSynthesis.cancel();
+            isAudioPlaying = false;
+            audioBtn.classList.remove('text-bcg-green', 'animate-pulse');
+        }
 
         document.addEventListener('change', (e) => {
             if (e.target.classList.contains('tech-check')) updateProgress();
@@ -452,9 +606,6 @@
         overlay.addEventListener('click', toggleSidebar);
 
         document.addEventListener('DOMContentLoaded', () => {
-            const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w4-semiconductor');
-            
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
                 if (keywordEl) {
