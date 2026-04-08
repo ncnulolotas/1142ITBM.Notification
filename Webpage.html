@@ -298,6 +298,13 @@
                     <span class="lang-en">W7 Global Drone Industry</span><span class="lang-zh hidden">第七週 全球無人機產業</span>
                 </div>
             </a>
+            <!-- W8 導航 -->
+            <a href="#" onclick="switchSection(event, 'w8-pmalign')" id="nav-w8-pmalign" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition whitespace-nowrap">
+                <div class="flex items-center">
+                    <span class="w-6 text-center mr-3"><i class="fas fa-bullseye"></i></span>
+                    <span class="lang-en">W8 PM Align</span><span class="lang-zh hidden">第八週 PM Align</span>
+                </div>
+            </a>
         </nav>
     </div>
 
@@ -307,13 +314,13 @@
         <!-- 區塊：課程簡介 (Overview) -->
         <div id="section-overview" class="animate-fade-in relative">
             
-            <!-- 導引箭頭：跳轉至最新的 W7 -->
+            <!-- 導引箭頭：跳轉至最新的 W8 -->
             <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex items-center">
-                <button onclick="switchSection(event, 'w7-drone')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W7 Global Drone Industry">
+                <button onclick="switchSection(event, 'w8-pmalign')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W8 PM Align">
                     <i class="fas fa-arrow-right text-xl animate-bounce-x"></i>
                     <span class="absolute right-20 bg-bcg-dark text-white text-[11px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700 pointer-events-none shadow-xl">
-                        <span class="lang-en">W7 Global Drone <i class="fas fa-angle-double-right ml-1"></i></span>
-                        <span class="lang-zh hidden">前往第七週無人機 <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-en">W8 PM Align <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-zh hidden">前往第八週 PM Align <i class="fas fa-angle-double-right ml-1"></i></span>
                     </span>
                 </button>
             </div>
@@ -1302,6 +1309,132 @@
             </div>
         </div>
 
+        <!-- SECTION: W8 PM ALIGN -->
+        <div id="section-w8-pmalign" class="hidden animate-fade-in">
+            <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
+                <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
+                    <span class="lang-en">W8 PM Align</span>
+                    <span class="lang-zh hidden">W8 PM Align</span>
+                </h2>
+            </div>
+
+            <!-- W8 重要提醒模組 -->
+            <div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/50 rounded-xl p-6 shadow-sm mb-8 relative audio-target">
+                <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-blue-600"><i class="fas fa-bell text-8xl"></i></div>
+                <div class="relative z-10">
+                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i>
+                        <span class="lang-en">W8 Important Reminders</span>
+                        <span class="lang-zh hidden">第八週 重要提醒</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">01</span>
+                            <p><span class="lang-en">Please bring your laptops for practical operations.</span><span class="lang-zh hidden">請攜帶筆電進行實體操作。</span></p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">02</span>
+                            <p><span class="lang-en">Visible name cards are mandatory for identification.</span><span class="lang-zh hidden">課堂參與及點名請務必放置名牌。</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- W8 任務清單 -->
+            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
+                <div class="flex justify-between items-end mb-4">
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W8 Mission Checklist</span><span class="lang-zh hidden">第八週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w8" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                </div>
+                <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
+
+                <div class="space-y-4" id="checklist-w8">
+                    <!-- 任務 1 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">1. <a href="https://forms.gle/qvoGPyFRzhrzruXN7" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">Midterm Peer Review Form</a></span>
+                                    <span class="lang-zh hidden">1. 填寫 <a href="https://forms.gle/qvoGPyFRzhrzruXN7" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">Midterm Peer Review Form</a></span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">The form link and login code have been sent to your email. Click your personal link in the email (which auto-fills the login code) and begin peer evaluation. If you haven't received the email, contact the TA immediately!</span>
+                                    <span class="lang-zh hidden">表單連結以及登入碼已寄送至您的郵件。請點擊信件中的個人表單連結(自動填入登入碼)並開始互評。若未收到互評信件，請立即連繫助教!</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 10th, 23:59</span><span class="lang-zh hidden">期限：4/10 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 2 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">2. Individual Assignment: Submit <a href="https://lolopodcast.github.io/PM-PO-PL-PCC/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">PM Align SPA</a> CSV</span>
+                                    <span class="lang-zh hidden">2. 個人作業：繳交 <a href="https://lolopodcast.github.io/PM-PO-PL-PCC/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">PM Align SPA</a> 的 CSV 檔</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 14th, 23:59</span><span class="lang-zh hidden">期限：4/14 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 3 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">3. Team Assignment: Coggle of PM Align & Oral Presentation</span>
+                                    <span class="lang-zh hidden">3. 小組作業：繳交 Coggle of PM Align 並準備口頭報告</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 14th, 23:59</span><span class="lang-zh hidden">期限：4/14 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 4 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">4. Presenting Groups: Reply in W7 Video and Menti Q&A</span>
+                                    <span class="lang-zh hidden">4. 報告組別：回覆 W7【Video and Menti Q&A】留言</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Reply to at least one comment from each of the other groups in W7 【Video and Menti Q&A】. Menti feedback can be viewed in General 【Mentimeter Note】.</span>
+                                    <span class="lang-zh hidden">於 W7【Video and Menti Q&A】回覆其他組別至少各一則留言，Menti反饋可至 General 【Mentimeter Note查看】。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 8th, 23:59</span><span class="lang-zh hidden">期限：4/8 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest audio-target">
+                    <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
+                    <span class="lang-en">Focusing on PM Align Analysis.</span>
+                    <span class="lang-zh hidden">本週重點：PM Align 分析。</span>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <!-- 頁尾聯繫資訊 -->
@@ -1445,7 +1578,7 @@
 
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
-            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone'];
+            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
@@ -1543,7 +1676,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // 初始化
             const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w7-drone');
+            if (logo) logo.onclick = (e) => switchSection(e, 'w8-pmalign');
 
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
