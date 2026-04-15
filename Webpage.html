@@ -244,7 +244,7 @@
             <i class="fas fa-chevron-left text-gray-400 group-hover:text-bcg-green transition text-sm"></i>
         </div>
 
-        <nav class="flex-1 overflow-y-auto no-scrollbar py-4 space-y-1">
+        <nav class="flex-1 overflow-y-auto no-scrollbar py-4 space-y-1 pb-24">
             <a href="#" onclick="switchSection(event, 'overview')" id="nav-overview" class="block px-6 py-4 border-l-4 border-bcg-green bg-gray-100 dark:bg-white/5 text-bcg-green dark:text-white whitespace-nowrap">
                 <div class="flex items-center">
                     <span class="w-6 text-center mr-3"><i class="fas fa-book-open"></i></span>
@@ -305,6 +305,13 @@
                     <span class="lang-en">W8 PM Align</span><span class="lang-zh hidden">第八週 PM Align</span>
                 </div>
             </a>
+            <!-- W9 導航 -->
+            <a href="#" onclick="switchSection(event, 'w9-competitive-scm')" id="nav-w9-competitive-scm" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition whitespace-nowrap">
+                <div class="flex items-center">
+                    <span class="w-6 text-center mr-3"><i class="fas fa-network-wired"></i></span>
+                    <span class="lang-en">W9 Competitive & SCM</span><span class="lang-zh hidden">第九週 競爭分析與供應鏈</span>
+                </div>
+            </a>
         </nav>
     </div>
 
@@ -314,13 +321,13 @@
         <!-- 區塊：課程簡介 (Overview) -->
         <div id="section-overview" class="animate-fade-in relative">
             
-            <!-- 導引箭頭：跳轉至最新的 W8 -->
+            <!-- 導引箭頭：跳轉至最新的 W9 -->
             <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex items-center">
-                <button onclick="switchSection(event, 'w8-pmalign')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W8 PM Align">
+                <button onclick="switchSection(event, 'w9-competitive-scm')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W9 Competitive & SCM">
                     <i class="fas fa-arrow-right text-xl animate-bounce-x"></i>
                     <span class="absolute right-20 bg-bcg-dark text-white text-[11px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700 pointer-events-none shadow-xl">
-                        <span class="lang-en">W8 PM Align <i class="fas fa-angle-double-right ml-1"></i></span>
-                        <span class="lang-zh hidden">前往第八週 PM Align <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-en">W9 Competitive & SCM <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-zh hidden">前往第九週 <i class="fas fa-angle-double-right ml-1"></i></span>
                     </span>
                 </button>
             </div>
@@ -1435,6 +1442,160 @@
             </div>
         </div>
 
+        <!-- SECTION: W9 COMPETITIVE ANALYSIS / GLOBAL SCM STRATEGY -->
+        <div id="section-w9-competitive-scm" class="hidden animate-fade-in">
+            <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
+                <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
+                    <span class="lang-en">W9 Competitive Analysis/Global SCM Strategy</span>
+                    <span class="lang-zh hidden">W9 競爭分析與全球供應鏈策略</span>
+                </h2>
+            </div>
+
+            <!-- W9 重要提醒模組 -->
+            <div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/50 rounded-xl p-6 shadow-sm mb-8 relative audio-target">
+                <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-blue-600"><i class="fas fa-bell text-8xl"></i></div>
+                <div class="relative z-10">
+                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i>
+                        <span class="lang-en">W9 Important Reminders</span>
+                        <span class="lang-zh hidden">第九週 重要提醒</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">01</span>
+                            <p><span class="lang-en">Please bring your laptops for practical operations.</span><span class="lang-zh hidden">請攜帶筆電進行實體操作。</span></p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">02</span>
+                            <p><span class="lang-en">Visible name cards are mandatory for identification.</span><span class="lang-zh hidden">課堂參與及點名請務必放置名牌。</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- W9 任務清單 -->
+            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
+                <div class="flex justify-between items-end mb-4">
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W9 Mission Checklist</span><span class="lang-zh hidden">第九週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w9" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                </div>
+                <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
+
+                <div class="space-y-4" id="checklist-w9">
+                    <!-- 任務 1 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">1. In-Class Activity Submission</span>
+                                    <span class="lang-zh hidden">1. 課堂活動作業繳交</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Please submit your In-Class Activity materials, which include: Gem instructions, Hand-written notes, and SVG.</span>
+                                    <span class="lang-zh hidden">請繳交您的課堂活動資料，包含：Gemini 提示詞、手寫筆記與 SVG 檔。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 15th (Wed), 23:59</span><span class="lang-zh hidden">截止日期：4/15 (三) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 2: Menti Q&A Interaction -->
+                    <div class="p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg">
+                        <p class="text-sm font-bold text-gray-900 dark:text-gray-100 mb-4 audio-target">
+                            <span class="lang-en">2. Menti Q&A Interaction</span><span class="lang-zh hidden">2. Menti 與 Moodle 反饋互動</span>
+                        </p>
+                        <div class="space-y-4">
+                            <!-- 2.1 非報告組別 -->
+                            <label class="relative block cursor-pointer group">
+                                <input type="checkbox" class="tech-check hidden peer">
+                                <div class="flex items-center p-3 bg-white/50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                                    <div class="w-6 h-6 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-[10px]"></i></div>
+                                    <div class="ml-3 flex-1 audio-target">
+                                        <p class="text-xs font-bold text-gray-900 dark:text-gray-100 task-title">
+                                            <span class="lang-en">For Non-Presenting Groups (Audience): Submit at least one feedback or question via Menti for today's presenters.</span>
+                                            <span class="lang-zh hidden">非報告組別（聽眾）：請透過 Menti 提交至少一個反饋或問題給今日報告組。</span>
+                                        </p>
+                                        <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                            <span class="lang-en">Deadline: April 15th (Wed), 23:59</span><span class="lang-zh hidden">截止日期：4/15 (三) 23:59</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- 2.2 報告組別 -->
+                            <label class="relative block cursor-pointer group">
+                                <input type="checkbox" class="tech-check hidden peer">
+                                <div class="flex items-center p-3 bg-white/50 dark:bg-black/20 border border-gray-200 dark:border-gray-700 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                                    <div class="w-6 h-6 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-[10px]"></i></div>
+                                    <div class="ml-3 flex-1 audio-target">
+                                        <p class="text-xs font-bold text-gray-900 dark:text-gray-100 task-title">
+                                            <span class="lang-en">For Presenting Groups (Presenters): 1. Check "Mentimeter Notes" in the General Section. 2. Reply to at least two questions under your group’s video thread on Moodle.</span>
+                                            <span class="lang-zh hidden">報告組別（報告人）：1. 於 General 區查看「Mentimeter Notes」中的提問。 2. 在 Moodle 您小組的影片討論串下回覆至少兩個問題。</span>
+                                        </p>
+                                        <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                            <span class="lang-en">Deadline: April 16th (Thu), 23:59</span><span class="lang-zh hidden">截止日期：4/16 (四) 23:59</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 任務 3 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">3. Individual Assignment: SPA CSV Files</span>
+                                    <span class="lang-zh hidden">3. 個人作業：繳交 SPA CSV 檔</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Submit your CSV files for the two SPAs: <a href="https://lolopodcast.github.io/SCM-with-Geopolitics/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">Global SCM Strategy (GSS)</a> & <a href="https://lolopodcast.github.io/Industry-Dynamics/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">Industry Evolution & Competitive Dynamics (IECD)</a>.</span>
+                                    <span class="lang-zh hidden">繳交兩份 SPA 的 CSV 檔案：<a href="https://lolopodcast.github.io/SCM-with-Geopolitics/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">Global SCM Strategy (GSS)</a> 與 <a href="https://lolopodcast.github.io/Industry-Dynamics/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">Industry Evolution & Competitive Dynamics (IECD)</a>。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 21st (Tue), 23:59</span><span class="lang-zh hidden">期限：4/21 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 4 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">4. Group Assignment: Coggle & Oral Presentation</span>
+                                    <span class="lang-zh hidden">4. 小組作業：Coggle 與口頭報告</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Task: Submit the Coggle for GSS & IECD and prepare for your oral presentation.</span>
+                                    <span class="lang-zh hidden">任務：繳交 GSS 與 IECD 的 Coggle，並準備口頭報告。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 21st (Tue), 23:59</span><span class="lang-zh hidden">期限：4/21 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest audio-target">
+                    <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
+                    <span class="lang-en">Focusing on Competitive Analysis and Global SCM.</span>
+                    <span class="lang-zh hidden">本週重點：競爭分析與全球供應鏈策略。</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- 頁尾聯繫資訊 -->
@@ -1578,7 +1739,7 @@
 
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
-            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign'];
+            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
@@ -1676,7 +1837,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // 初始化
             const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w8-pmalign');
+            if (logo) logo.onclick = (e) => switchSection(e, 'w9-competitive-scm');
 
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
