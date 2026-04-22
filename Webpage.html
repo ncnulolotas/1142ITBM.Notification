@@ -78,7 +78,7 @@
         .animate-blob { animation: blob 7s infinite; }
         .animation-delay-2000 { animation-delay: 2s; }
 
-        /* Tooltip 樣式 */
+        /* 關鍵字 Tooltip 樣式 */
         .keyword {
             border-bottom: 1.5px dotted #177a46;
             cursor: help;
@@ -129,6 +129,7 @@
             transform: var(--tip-transform, translateX(-50%)) translateY(0);
         }
 
+        /* 自定義動畫：導航箭頭 */
         @keyframes bounce-x {
             0%, 100% { transform: translateX(0); }
             50% { transform: translateX(5px); }
@@ -203,7 +204,7 @@
             <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-1 sm:mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
-            <div onclick="switchSection(event, 'overview')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
+            <div onclick="switchSection(event, 'w10-vibecoding')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
                 <span class="font-bold text-lg sm:text-xl tracking-wider text-bcg-green leading-none uppercase group-hover:opacity-80 transition-opacity">ITBM</span>
             </div>
             <div class="hidden lg:flex flex-col justify-center h-full py-1">
@@ -312,6 +313,13 @@
                     <span class="lang-en">W9 Competitive & SCM</span><span class="lang-zh hidden">第九週 競爭分析與供應鏈</span>
                 </div>
             </a>
+            <!-- W10 導航 -->
+            <a href="#" onclick="switchSection(event, 'w10-vibecoding')" id="nav-w10-vibecoding" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition whitespace-nowrap">
+                <div class="flex items-center">
+                    <span class="w-6 text-center mr-3"><i class="fas fa-laptop-code"></i></span>
+                    <span class="lang-en">W10 Vibe Coding</span><span class="lang-zh hidden">第十週 Vibe Coding</span>
+                </div>
+            </a>
         </nav>
     </div>
 
@@ -321,13 +329,13 @@
         <!-- 區塊：課程簡介 (Overview) -->
         <div id="section-overview" class="animate-fade-in relative">
             
-            <!-- 導引箭頭：跳轉至最新的 W9 -->
+            <!-- 導引箭頭：跳轉至最新的 W10 -->
             <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex items-center">
-                <button onclick="switchSection(event, 'w9-competitive-scm')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W9 Competitive & SCM">
+                <button onclick="switchSection(event, 'w10-vibecoding')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W10 Vibe Coding">
                     <i class="fas fa-arrow-right text-xl animate-bounce-x"></i>
                     <span class="absolute right-20 bg-bcg-dark text-white text-[11px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700 pointer-events-none shadow-xl">
-                        <span class="lang-en">W9 Competitive & SCM <i class="fas fa-angle-double-right ml-1"></i></span>
-                        <span class="lang-zh hidden">前往第九週 <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-en">W10 Vibe Coding <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-zh hidden">前往第十週 <i class="fas fa-angle-double-right ml-1"></i></span>
                     </span>
                 </button>
             </div>
@@ -676,7 +684,7 @@
             </div>
         </div>
 
-        <!-- SECTION: W3 PESTEL & TU (預設區塊) -->
+        <!-- SECTION: W3 PESTEL & TU -->
         <div id="section-w3-pestel-tu" class="hidden animate-fade-in">
             <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
                 <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
@@ -702,7 +710,7 @@
                 </div>
             </div>
 
-            <!-- W3 任務清單 (已刪除原任務 1) -->
+            <!-- W3 任務清單 -->
             <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden audio-target">
                 <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-brain text-8xl"></i></div>
                 <div class="flex justify-between items-end mb-4">
@@ -712,7 +720,7 @@
                 <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
 
                 <div class="space-y-4" id="checklist-w3">
-                    <!-- 任務 1 (原任務 2) -->
+                    <!-- 任務 1 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
@@ -731,7 +739,7 @@
                         </div>
                     </label>
 
-                    <!-- 任務 2 (原任務 3) -->
+                    <!-- 任務 2 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
@@ -758,7 +766,7 @@
                         </div>
                     </label>
 
-                    <!-- 任務 3 (原任務 4) -->
+                    <!-- 任務 3 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
@@ -786,7 +794,7 @@
             </div>
         </div>
 
-        <!-- SECTION: W4 Value Chain and Lifecycle (預設區塊) -->
+        <!-- SECTION: W4 Value Chain and Lifecycle -->
         <div id="section-w4-value-chain-lifecycle" class="hidden animate-fade-in">
             <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
                 <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
@@ -1596,9 +1604,144 @@
                 </div>
             </div>
         </div>
+
+        <!-- SECTION: W10 VIBE CODING -->
+        <div id="section-w10-vibecoding" class="hidden animate-fade-in">
+            <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
+                <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
+                    <span class="lang-en">W10 Vibe Coding</span>
+                    <span class="lang-zh hidden">W10 Vibe Coding</span>
+                </h2>
+            </div>
+
+            <!-- W10 提醒模組 -->
+            <div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/50 rounded-xl p-6 shadow-sm mb-8 relative audio-target">
+                <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-blue-600"><i class="fas fa-bell text-8xl"></i></div>
+                <div class="relative z-10">
+                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i>
+                        <span class="lang-en">W10 Important Reminders</span>
+                        <span class="lang-zh hidden">第十週 重要提醒</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">01</span>
+                            <p><span class="lang-en">Please bring your laptops for practical operations.</span><span class="lang-zh hidden">請攜帶筆電進行實體操作。</span></p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">02</span>
+                            <p><span class="lang-en">Visible name cards are mandatory for identification.</span><span class="lang-zh hidden">課堂參與及點名請務必放置名牌。</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- W10 任務清單 -->
+            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
+                <div class="flex justify-between items-end mb-4">
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W10 Mission Checklist</span><span class="lang-zh hidden">第十週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w10-vibecoding" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                </div>
+                <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
+
+                <div class="space-y-4" id="checklist-w10-vibecoding">
+                    <!-- 任務 1 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">1. Menti Q&A Interaction</span>
+                                    <span class="lang-zh hidden">1. Menti 與 Moodle 反饋互動</span>
+                                </p>
+                                <div class="text-[11px] text-gray-500 mt-1 space-y-1">
+                                    <p class="font-bold text-gray-700 dark:text-gray-300"><span class="lang-en">For Presenting Groups (Presenters):</span><span class="lang-zh hidden">報告組別（報告人）：</span></p>
+                                    <p><span class="lang-en">1. Check the "Mentimeter Notes" in the General Section for questions from your peers.</span><span class="lang-zh hidden">1. 查看 General 區「Mentimeter Notes」中的提問。</span></p>
+                                    <p><span class="lang-en">2. Reply to at least one comment from each other group under your group’s video thread on Moodle.</span><span class="lang-zh hidden">2. 在 Moodle 貴組的影片討論串下，回覆其他每一組至少一則留言。</span></p>
+                                </div>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-2">
+                                    <span class="lang-en">Deadline: 4/22 Today (Wed.), 23:59</span><span class="lang-zh hidden">截止日期：4/22 今日 (三) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 2 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">2. Individual Assignment: SPA Vibe Coding CSV Files</span>
+                                    <span class="lang-zh hidden">2. 個人作業：SPA Vibe Coding CSV 檔</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Submit your CSV file of the Vibe Coding SPA.</span>
+                                    <span class="lang-zh hidden">繳交 Vibe Coding SPA 的 CSV 檔案。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 28th (Tue), 23:59</span><span class="lang-zh hidden">期限：4/28 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 3 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">3. Group Assignment: Coggle & Oral Presentation</span>
+                                    <span class="lang-zh hidden">3. 小組作業：Coggle 與口頭報告</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Submit the Coggle of Vibe Coding and prepare for your oral presentation.</span>
+                                    <span class="lang-zh hidden">繳交 Vibe Coding 的 Coggle，並準備口頭報告。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 28th (Tue), 23:59</span><span class="lang-zh hidden">期限：4/28 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 4 -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">4. TP Company Registration (Only Group Leader)</span>
+                                    <span class="lang-zh hidden">4. TP 公司註冊 (僅限組長)</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Complete the registration for your TP company. (The company must be publicly listed.)</span>
+                                    <span class="lang-zh hidden">完成貴組的 TP 公司註冊。（該公司必須為上市公司。）</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: April 28th (Tue), 23:59</span><span class="lang-zh hidden">期限：4/28 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest audio-target">
+                    <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
+                    <span class="lang-en">Next week's focus: Vibe Coding.</span>
+                    <span class="lang-zh hidden">下周重點：Vibe Coding。</span>
+                </div>
+            </div>
+        </div>
     </main>
 
-    <!-- 頁尾聯繫資訊 -->
+    <!-- 頁尾 -->
     <footer class="fixed bottom-0 w-full min-h-[3.5rem] h-auto bg-white dark:bg-black/95 border-t border-gray-200 dark:border-gray-800 flex items-center justify-between px-3 md:px-6 z-50 text-xs py-2">
         <div class="flex flex-col">
             <span class="text-[9px] text-gray-500 font-mono leading-tight">1142 ITBM-EMI Hub &copy; NCNU IBS</span>
@@ -1739,7 +1882,7 @@
 
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
-            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm'];
+            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm', 'w10-vibecoding'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
@@ -1837,7 +1980,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // 初始化
             const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w9-competitive-scm');
+            if (logo) logo.onclick = (e) => switchSection(e, 'w10-vibecoding');
 
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
