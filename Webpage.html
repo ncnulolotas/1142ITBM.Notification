@@ -51,13 +51,6 @@
         .playing-indicator span:nth-child(3) { animation-delay: 0.4s; }
         @keyframes wave { 0%, 100% { height: 10px; } 50% { height: 16px; } }
 
-        .tbd-card {
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(100,100,100,0.05) 10px, rgba(100,100,100,0.05) 20px);
-        }
-        .dark .tbd-card {
-            background-image: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
-        }
-
         /* 科技感複選框樣式 */
         .tech-check:checked + div {
             border-color: #177a46;
@@ -78,7 +71,7 @@
         .animate-blob { animation: blob 7s infinite; }
         .animation-delay-2000 { animation-delay: 2s; }
 
-        /* 關鍵字 Tooltip 樣式 */
+        /* Tooltip 樣式 */
         .keyword {
             border-bottom: 1.5px dotted #177a46;
             cursor: help;
@@ -129,7 +122,6 @@
             transform: var(--tip-transform, translateX(-50%)) translateY(0);
         }
 
-        /* 自定義動畫：導航箭頭 */
         @keyframes bounce-x {
             0%, 100% { transform: translateX(0); }
             50% { transform: translateX(5px); }
@@ -204,7 +196,7 @@
             <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-1 sm:mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
-            <div onclick="switchSection(event, 'w10-vibecoding')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
+            <div onclick="switchSection(event, 'w11-aidatacenter')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
                 <span class="font-bold text-lg sm:text-xl tracking-wider text-bcg-green leading-none uppercase group-hover:opacity-80 transition-opacity">ITBM</span>
             </div>
             <div class="hidden lg:flex flex-col justify-center h-full py-1">
@@ -320,6 +312,13 @@
                     <span class="lang-en">W10 Vibe Coding</span><span class="lang-zh hidden">第十週 Vibe Coding</span>
                 </div>
             </a>
+            <!-- W11 導航 -->
+            <a href="#" onclick="switchSection(event, 'w11-aidatacenter')" id="nav-w11-aidatacenter" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition whitespace-nowrap">
+                <div class="flex items-center">
+                    <span class="w-6 text-center mr-3"><i class="fas fa-server"></i></span>
+                    <span class="lang-en">W11 AI Data Center</span><span class="lang-zh hidden">第十一週 AI Data Center</span>
+                </div>
+            </a>
         </nav>
     </div>
 
@@ -329,13 +328,13 @@
         <!-- 區塊：課程簡介 (Overview) -->
         <div id="section-overview" class="animate-fade-in relative">
             
-            <!-- 導引箭頭：跳轉至最新的 W10 -->
+            <!-- 導引箭頭：跳轉至最新的 W11 -->
             <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex items-center">
-                <button onclick="switchSection(event, 'w10-vibecoding')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W10 Vibe Coding">
+                <button onclick="switchSection(event, 'w11-aidatacenter')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W11 AI Data Center">
                     <i class="fas fa-arrow-right text-xl animate-bounce-x"></i>
                     <span class="absolute right-20 bg-bcg-dark text-white text-[11px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700 pointer-events-none shadow-xl">
-                        <span class="lang-en">W10 Vibe Coding <i class="fas fa-angle-double-right ml-1"></i></span>
-                        <span class="lang-zh hidden">前往第十週 <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-en">W11 AI Data Center <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-zh hidden">前往第十一週 <i class="fas fa-angle-double-right ml-1"></i></span>
                     </span>
                 </button>
             </div>
@@ -670,6 +669,7 @@
                                         <span class="lang-en">Note: Every team member must present.</span>
                                         <span class="lang-zh hidden">注意：每位團員都必須參與報告。</span>
                                     </p>
+                                    <!-- 第五點截止日期已依要求移除 -->
                                 </div>
                             </div>
                         </div>
@@ -720,7 +720,6 @@
                 <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
 
                 <div class="space-y-4" id="checklist-w3">
-                    <!-- 任務 1 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
@@ -739,7 +738,6 @@
                         </div>
                     </label>
 
-                    <!-- 任務 2 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
@@ -766,7 +764,6 @@
                         </div>
                     </label>
 
-                    <!-- 任務 3 -->
                     <label class="relative block cursor-pointer group">
                         <input type="checkbox" class="tech-check hidden peer">
                         <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
@@ -1739,6 +1736,159 @@
                 </div>
             </div>
         </div>
+
+        <!-- SECTION: W11 AI DATA CENTER -->
+        <div id="section-w11-aidatacenter" class="hidden animate-fade-in">
+            <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
+                <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
+                    <span class="lang-en">W11 AI Data Center</span>
+                    <span class="lang-zh hidden">W11 AI Data Center</span>
+                </h2>
+            </div>
+
+            <!-- W11 重要提醒模組 -->
+            <div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/50 rounded-xl p-6 shadow-sm mb-8 relative audio-target">
+                <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-blue-600"><i class="fas fa-bell text-8xl"></i></div>
+                <div class="relative z-10">
+                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i>
+                        <span class="lang-en">W11 Important Reminders</span>
+                        <span class="lang-zh hidden">第十一週 重要提醒</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">01</span>
+                            <p><span class="lang-en">Please bring your laptops for practical operations.</span><span class="lang-zh hidden">請攜帶筆電進行實體操作。</span></p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">02</span>
+                            <p><span class="lang-en">Visible name cards are mandatory for identification.</span><span class="lang-zh hidden">課堂參與及點名請務必放置名牌。</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- W11 任務清單 -->
+            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
+                <div class="flex justify-between items-end mb-4">
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W11 Mission Checklist</span><span class="lang-zh hidden">第十一週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w11-aidatacenter" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                </div>
+                <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
+
+                <div class="space-y-4" id="checklist-w11-aidatacenter">
+                    <!-- 任務 1: In-Class Activity -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">1. In-Class Activity Late Submission</span>
+                                    <span class="lang-zh hidden">1. 課堂活動補交</span>
+                                </p>
+                                <div class="text-[11px] text-gray-500 mt-1 space-y-1">
+                                    <p><span class="lang-en">• If you haven't submitted your in-class activity, please do so via Moodle.</span><span class="lang-zh hidden">• 若您尚未繳交課堂活動，請透過 Moodle 補交。</span></p>
+                                    <p><span class="lang-en">• Submission: Hand-written notes & Html file.</span><span class="lang-zh hidden">• 繳交內容：手寫筆記與 Html 檔。</span></p>
+                                </div>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-2">
+                                    <span class="lang-en">Deadline: Tonight, April 29th (Wed), 23:59</span><span class="lang-zh hidden">截止日期：今晚 4/29 (三) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 2: Menti Q&A -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">2. Menti Q&A Interaction</span>
+                                    <span class="lang-zh hidden">2. Menti 與 Moodle 反饋互動</span>
+                                </p>
+                                <div class="text-[11px] text-gray-500 mt-1 space-y-1">
+                                    <p class="font-bold text-gray-700 dark:text-gray-300"><span class="lang-en">For Presenting Groups (Presenters):</span><span class="lang-zh hidden">報告組別（報告人）：</span></p>
+                                    <p><span class="lang-en">1. Check the "Mentimeter Notes" in the General Section for questions from your peers.</span><span class="lang-zh hidden">1. 查看 General 區「Mentimeter Notes」中的提問。</span></p>
+                                    <p><span class="lang-en">2. Reply to at least one comment from each other group under your group’s video thread on Moodle.</span><span class="lang-zh hidden">2. 在 Moodle 貴組的影片討論串下，回覆其他每一組至少一則留言。</span></p>
+                                </div>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-2">
+                                    <span class="lang-en">Deadline: 4/29 Today (Wed.), 23:59</span><span class="lang-zh hidden">截止日期：4/29 今日 (三) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 3: Individual Assignment -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">3. Individual Assignment: SPA AI Data Center Files</span>
+                                    <span class="lang-zh hidden">3. 個人作業：SPA AI Data Center CSV 檔</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">• Submit your CSV file of the AI Data Center SPA.</span>
+                                    <span class="lang-zh hidden">• 繳交 AI Data Center SPA 的 CSV 檔案。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: May 5th (Tue), 23:59</span><span class="lang-zh hidden">期限：5/5 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 4: Group Assignment -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">4. Group Assignment: Coggle & Oral Presentation</span>
+                                    <span class="lang-zh hidden">4. 小組作業：Coggle 與口頭報告</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">• Submit the Coggle of AI Data Center and prepare for your oral presentation.</span>
+                                    <span class="lang-zh hidden">• 繳交 AI Data Center 的 Coggle，並準備口頭報告。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: May 5th (Tue), 23:59</span><span class="lang-zh hidden">期限：5/5 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 5: Absence and Leave Policy -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">5. Absence and Leave Policy</span>
+                                    <span class="lang-zh hidden">5. 請假規定</span>
+                                </p>
+                                <div class="text-[11px] text-gray-500 mt-1 space-y-1">
+                                    <p><span class="lang-en">• If you were absent, please post your leave request in the General Section on Moodle.</span><span class="lang-zh hidden">• 若您缺席，請在 Moodle 的 General 區張貼請假要求。</span></p>
+                                    <p><span class="lang-en">• To avoid partial participation score deductions, you may submit your Self-Study Notes before the next class session.</span><span class="lang-zh hidden">• 為避免扣除部分參與分數，您可在下節課前繳交自學筆記。</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest audio-target">
+                    <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
+                    <span class="lang-en">Next week's focus: AI Data Center.</span>
+                    <span class="lang-zh hidden">下周重點：AI Data Center。</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- 頁尾 -->
@@ -1882,7 +2032,7 @@
 
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
-            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm', 'w10-vibecoding'];
+            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm', 'w10-vibecoding', 'w11-aidatacenter'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
@@ -1980,7 +2130,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             // 初始化
             const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w10-vibecoding');
+            if (logo) logo.onclick = (e) => switchSection(e, 'w11-aidatacenter');
 
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
