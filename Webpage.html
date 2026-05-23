@@ -196,7 +196,7 @@
             <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-1 sm:mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
-            <div onclick="switchSection(event, 'w13-visa')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
+            <div onclick="switchSection(event, 'w14-avgm')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
                 <span class="font-bold text-lg sm:text-xl tracking-wider text-bcg-green leading-none uppercase group-hover:opacity-80 transition-opacity">ITBM</span>
             </div>
             <div class="hidden lg:flex flex-col justify-center h-full py-1">
@@ -333,6 +333,13 @@
                     <span class="lang-en">W13 The Brand is VISA: Uber</span><span class="lang-zh hidden">第十三週 The Brand is VISA: Uber</span>
                 </div>
             </a>
+            <!-- W14 導航 -->
+            <a href="#" onclick="switchSection(event, 'w14-avgm')" id="nav-w14-avgm" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition whitespace-nowrap">
+                <div class="flex items-center">
+                    <span class="w-6 text-center mr-3"><i class="fas fa-car-side"></i></span>
+                    <span class="lang-en">W14 Autonomous Vehicles</span><span class="lang-zh hidden">第十四週 自動駕駛汽車</span>
+                </div>
+            </a>
         </nav>
     </div>
 
@@ -342,13 +349,13 @@
         <!-- 區塊：課程簡介 (Overview) -->
         <div id="section-overview" class="animate-fade-in relative">
             
-            <!-- 導引箭頭：跳轉至最新的 W13 -->
+            <!-- 導引箭頭：跳轉至最新的 W14 -->
             <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex items-center">
-                <button onclick="switchSection(event, 'w13-visa')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W13 The Brand is VISA: Uber">
+                <button onclick="switchSection(event, 'w14-avgm')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W14 Autonomous Vehicles">
                     <i class="fas fa-arrow-right text-xl animate-bounce-x"></i>
                     <span class="absolute right-20 bg-bcg-dark text-white text-[11px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700 pointer-events-none shadow-xl">
-                        <span class="lang-en">W13 The Brand is VISA: Uber <i class="fas fa-angle-double-right ml-1"></i></span>
-                        <span class="lang-zh hidden">前往第十三週 <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-en">W14 Autonomous Vehicles <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-zh hidden">前往第十四週 <i class="fas fa-angle-double-right ml-1"></i></span>
                     </span>
                 </button>
             </div>
@@ -2189,6 +2196,116 @@
                 </div>
             </div>
         </div>
+
+        <!-- SECTION: W14 AUTONOMOUS VEHICLES -->
+        <div id="section-w14-avgm" class="hidden animate-fade-in">
+            <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
+                <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
+                    <span class="lang-en">W14 Autonomous Vehicles 2026 (AVGM)</span>
+                    <span class="lang-zh hidden">W14 自動駕駛汽車 2026 (AVGM)</span>
+                </h2>
+            </div>
+
+            <!-- W14 重要提醒模組 -->
+            <div class="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-900/50 rounded-xl p-6 shadow-sm mb-8 relative audio-target">
+                <div class="absolute -top-4 -right-4 opacity-10 rotate-12 text-blue-600"><i class="fas fa-bell text-8xl"></i></div>
+                <div class="relative z-10">
+                    <h3 class="text-lg font-bold text-blue-700 dark:text-blue-400 uppercase tracking-tighter mb-4 flex items-center">
+                        <i class="fas fa-bullhorn mr-2"></i>
+                        <span class="lang-en">W14 Important Reminders</span>
+                        <span class="lang-zh hidden">第十四週 重要提醒</span>
+                    </h3>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">01</span>
+                            <p><span class="lang-en">Please bring your laptops for practical operations.</span><span class="lang-zh hidden">請攜帶筆電進行實體操作。</span></p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="w-5 h-5 rounded bg-blue-600 text-white flex items-center justify-center text-[10px] font-bold mr-3 shrink-0 mt-0.5">02</span>
+                            <p><span class="lang-en">Visible name cards are mandatory for identification.</span><span class="lang-zh hidden">課堂參與及點名請務必放置名牌。</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- W14 任務清單 -->
+            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
+                <div class="flex justify-between items-end mb-4">
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W14 Mission Checklist</span><span class="lang-zh hidden">第十四週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w14-avgm" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                </div>
+                <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
+
+                <div class="space-y-4" id="checklist-w14-avgm">
+                    <!-- 任務 1: Individual Assignment -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">1. Individual Assignment: <a href="https://lolopodcast.github.io/Autonomous-Vehicles-Global-Market-and-Technology-2026/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">SPA "Autonomous Vehicles 2026 (AVGM)"</a> Files</span>
+                                    <span class="lang-zh hidden">1. 個人作業：<a href="https://lolopodcast.github.io/Autonomous-Vehicles-Global-Market-and-Technology-2026/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">SPA "Autonomous Vehicles 2026 (AVGM)"</a> CSV 檔</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Submit your CSV file of <a href="https://lolopodcast.github.io/Autonomous-Vehicles-Global-Market-and-Technology-2026/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">AVGM SPA</a>.</span>
+                                    <span class="lang-zh hidden">繳交 <a href="https://lolopodcast.github.io/Autonomous-Vehicles-Global-Market-and-Technology-2026/" target="_blank" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300">AVGM SPA</a> 的 CSV 檔案。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: May 26th (Tue), 23:59</span><span class="lang-zh hidden">期限：5/26 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 2: Group Assignment -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">2. Group Assignment: Coggle & Oral Presentation</span>
+                                    <span class="lang-zh hidden">2. 小組作業：Coggle 與口頭報告</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Submit the Coggle of Autonomous Vehicles 2026 (AVGM) and prepare for your oral presentation.</span>
+                                    <span class="lang-zh hidden">繳交 Autonomous Vehicles 2026 (AVGM) 的 Coggle，並準備口頭報告。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: May 26th (Tue), 23:59</span><span class="lang-zh hidden">期限：5/26 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <!-- 任務 3: Late Submission Reminder -->
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">3. Late Submission Reminder</span>
+                                    <span class="lang-zh hidden">3. 遲交提醒</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Please ensure you submit your assignment, even if it is late.</span>
+                                    <span class="lang-zh hidden">請務必繳交您的作業，即使已經遲交。</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest audio-target">
+                    <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
+                    <span class="lang-en">Next week's focus: Autonomous Vehicles 2026 (AVGM).</span>
+                    <span class="lang-zh hidden">下周重點：自動駕駛汽車 2026 (AVGM)。</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!-- 頁尾 -->
@@ -2332,7 +2449,7 @@
 
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
-            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm', 'w10-vibecoding', 'w11-aidatacenter', 'w12-agenticai', 'w13-visa'];
+            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm', 'w10-vibecoding', 'w11-aidatacenter', 'w12-agenticai', 'w13-visa', 'w14-avgm'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
@@ -2428,9 +2545,9 @@
         overlay.addEventListener('click', toggleSidebar);
 
         document.addEventListener('DOMContentLoaded', () => {
-            // 初始化
+            // 初始化 W14
             const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w13-visa');
+            if (logo) logo.onclick = (e) => switchSection(e, 'w14-avgm');
 
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
