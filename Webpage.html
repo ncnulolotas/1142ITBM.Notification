@@ -196,7 +196,7 @@
             <button id="menu-btn" class="text-gray-700 dark:text-gray-300 hover:text-bcg-green focus:outline-none transition p-2 mr-1 sm:mr-2">
                 <i class="fas fa-bars text-lg"></i>
             </button>
-            <div onclick="switchSection(event, 'w16-award')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
+            <div onclick="switchSection(event, 'w17-final-reminder')" class="cursor-pointer mr-2 sm:mr-4 border-r border-gray-300 dark:border-gray-700 pr-2 sm:pr-4 h-8 flex items-center group">
                 <span class="font-bold text-lg sm:text-xl tracking-wider text-bcg-green leading-none uppercase group-hover:opacity-80 transition-opacity">ITBM</span>
             </div>
             <div class="hidden lg:flex flex-col justify-center h-full py-1">
@@ -354,6 +354,13 @@
                     <span class="lang-en">W16 Award Ceremony</span><span class="lang-zh hidden">第十六週 頒獎典禮</span>
                 </div>
             </a>
+            <!-- W17 導航 -->
+            <a href="#" onclick="switchSection(event, 'w17-final-reminder')" id="nav-w17-final-reminder" class="block px-6 py-4 border-l-4 border-transparent text-gray-700 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-white/5 transition whitespace-nowrap">
+                <div class="flex items-center">
+                    <span class="w-6 text-center mr-3"><i class="fas fa-clipboard-list"></i></span>
+                    <span class="lang-en">W17 Final Reminder</span><span class="lang-zh hidden">第十七週 最後提醒</span>
+                </div>
+            </a>
         </nav>
     </div>
 
@@ -363,13 +370,13 @@
         <!-- 區塊：課程簡介 (Overview) -->
         <div id="section-overview" class="animate-fade-in relative">
             
-            <!-- 導引箭頭：跳轉至最新的 W16 -->
+            <!-- 導引箭頭：跳轉至最新的 W17 -->
             <div class="fixed right-6 top-1/2 -translate-y-1/2 z-40 flex items-center">
-                <button onclick="switchSection(event, 'w16-award')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W16 Award Ceremony">
+                <button onclick="switchSection(event, 'w17-final-reminder')" class="w-14 h-14 rounded-full bg-bcg-green text-white flex items-center justify-center transition-all duration-300 shadow-[0_0_30px_rgba(23,122,70,0.6)] hover:scale-110 active:scale-95 group animate-pulse" title="Next: W17 Final Reminder">
                     <i class="fas fa-arrow-right text-xl animate-bounce-x"></i>
                     <span class="absolute right-20 bg-bcg-dark text-white text-[11px] font-bold px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-gray-700 pointer-events-none shadow-xl">
-                        <span class="lang-en">W16 Award Ceremony <i class="fas fa-angle-double-right ml-1"></i></span>
-                        <span class="lang-zh hidden">前往第十六週 <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-en">W17 Final Reminder <i class="fas fa-angle-double-right ml-1"></i></span>
+                        <span class="lang-zh hidden">前往第十七週 <i class="fas fa-angle-double-right ml-1"></i></span>
                     </span>
                 </button>
             </div>
@@ -2522,8 +2529,93 @@
 
                 <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest audio-target">
                     <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
-                    <span class="lang-en">Next week's focus: Award Ceremony.</span>
-                    <span class="lang-zh hidden">下周重點：Award Ceremony。</span>
+                    <span class="lang-en">Next week's focus: Final Reminder.</span>
+                    <span class="lang-zh hidden">下周重點：Final Reminder。</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION: W17 FINAL REMINDER -->
+        <div id="section-w17-final-reminder" class="hidden animate-fade-in">
+            <div class="mb-6 border-b border-gray-200 dark:border-gray-800 pb-4">
+                <h2 class="text-2xl font-light text-bcg-green uppercase tracking-wider audio-target">
+                    <span class="lang-en">W17 Final Reminder</span>
+                    <span class="lang-zh hidden">W17 最後提醒</span>
+                </h2>
+            </div>
+
+            <!-- W17 任務清單 -->
+            <div class="bg-white dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-xl p-6 shadow-xl backdrop-blur-md relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-5 pointer-events-none"><i class="fas fa-microchip text-8xl"></i></div>
+                <div class="flex justify-between items-end mb-4">
+                    <div class="flex flex-col"><h3 class="text-sm font-bold uppercase tracking-[0.2em] text-bcg-green"><span class="lang-en">W17 Mission Checklist</span><span class="lang-zh hidden">第十七週 任務達成狀態清單</span></h3></div>
+                    <span id="progress-percent-w17-final-reminder" class="text-lg font-bold font-mono text-bcg-green">0%</span>
+                </div>
+                <div class="w-full h-1.5 bg-gray-200 dark:bg-white/10 rounded-full mb-8 overflow-hidden"><div class="mission-progress-bar h-full bg-bcg-green transition-all duration-700 ease-out shadow-[0_0_15px_rgba(23,122,70,0.6)]" style="width: 0%"></div></div>
+
+                <div class="space-y-4" id="checklist-w17-final-reminder">
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">1. Final Peer Review Form</span>
+                                    <span class="lang-zh hidden">1. 期末互評表單 (Final Peer Review Form)</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">Please click the personalized link sent to your email to complete the Final Peer Review Form. If you have not received it, please contact your TA as soon as possible.</span>
+                                    <span class="lang-zh hidden">請點擊寄至您信箱的個人專屬連結以完成期末互評表單。若未收到信件，請盡快與助教聯繫。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: June 11th (Thu), 23:59</span><span class="lang-zh hidden">期限：6/11 (四) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">2. Submission of Assignments</span>
+                                    <span class="lang-zh hidden">2. 作業繳交與補交</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">The deadline for submitting Bonus Assignments (BA) and any self-study notes for absences or late arrivals is June 16th (Tue), 23:59.</span>
+                                    <span class="lang-zh hidden">繳交加分作業 (BA) 以及因缺席或遲到而需補交之自學筆記的最後期限為 6月16日 (二) 23:59。</span>
+                                </p>
+                                <p class="font-bold text-red-700 dark:text-red-500 uppercase text-[10px] mt-1">
+                                    <span class="lang-en">Deadline: June 16th (Tue), 23:59</span><span class="lang-zh hidden">期限：6/16 (二) 23:59</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="relative block cursor-pointer group">
+                        <input type="checkbox" class="tech-check hidden peer">
+                        <div class="flex items-center p-4 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-gray-800 rounded-lg group-hover:border-bcg-green/40 transition-all duration-300">
+                            <div class="w-8 h-8 rounded-md bg-white dark:bg-white/10 flex items-center justify-center text-gray-400 group-hover:text-bcg-green transition peer-checked:bg-bcg-green peer-checked:text-white shrink-0"><i class="fas fa-check text-xs"></i></div>
+                            <div class="ml-4 flex-1 audio-target">
+                                <p class="text-sm font-bold text-gray-900 dark:text-gray-100 task-title">
+                                    <span class="lang-en">3. Award Ceremony Photos and Certificates</span>
+                                    <span class="lang-zh hidden">3. 頒獎典禮照片與證書</span>
+                                </p>
+                                <p class="text-[11px] text-gray-500 mt-1">
+                                    <span class="lang-en">We are currently organizing the photos and certificates from the Award Ceremony. We will share them with you once they are ready.</span>
+                                    <span class="lang-zh hidden">我們目前正在整理頒獎典禮的照片與證書。整理完成後將會立即與大家分享。</span>
+                                </p>
+                            </div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="mt-6 flex items-center text-[10px] text-gray-500 font-mono uppercase tracking-widest audio-target">
+                    <i class="fas fa-info-circle mr-2 text-bcg-green animate-pulse"></i>
+                    <span class="lang-en">Semester Wrap-up & Final Reminders.</span>
+                    <span class="lang-zh hidden">本週重點：學期總結與最後提醒。</span>
                 </div>
             </div>
         </div>
@@ -2671,7 +2763,7 @@
         window.switchSection = function(e, sectionId) {
             if (e) e.preventDefault();
             
-            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm', 'w10-vibecoding', 'w11-aidatacenter', 'w12-agenticai', 'w13-visa', 'w14-avgm', 'w15-tp', 'w16-award'];
+            const sections = ['overview', 'w1-orientation', 'w2-onboarding', 'w3-pestel-tu', 'w4-value-chain-lifecycle', 'w5-smarthome', 'w6-smarthome', 'w7-drone', 'w8-pmalign', 'w9-competitive-scm', 'w10-vibecoding', 'w11-aidatacenter', 'w12-agenticai', 'w13-visa', 'w14-avgm', 'w15-tp', 'w16-award', 'w17-final-reminder'];
             sections.forEach(id => {
                 const el = document.getElementById('section-' + id);
                 if(el) el.classList.add('hidden');
@@ -2792,9 +2884,9 @@
         overlay.addEventListener('click', toggleSidebar);
 
         document.addEventListener('DOMContentLoaded', () => {
-            // 預設導航至 W16
+            // 預設導航至 W17
             const logo = document.querySelector('header div[onclick]');
-            if (logo) logo.onclick = (e) => switchSection(e, 'w16-award');
+            if (logo) logo.onclick = (e) => switchSection(e, 'w17-final-reminder');
             
             document.addEventListener('click', (e) => {
                 const keywordEl = e.target.closest('.keyword');
